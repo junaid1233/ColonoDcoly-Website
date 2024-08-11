@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Us - ColonoScopy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .upload-btn {
+            margin-top: 20px;
+        }
+        .gallery, .video-gallery {
+            margin-top: 30px;
+        }
+        .gallery img, .video-gallery video {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="#">
+                <img src="./images/colonoLogo.png" alt="Logo" class="logo-img">ColonoScopy
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visit.html">Visit</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="container mt-5 pt-5">
+        <section id="login-section">
+            <h2>Login to Access Upload Features</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Name:</label>
+                    <input type="text" class="form-control" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </section>
+        
+        <section id="content-section" style="display: none;">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Photos</h2>
+                    <div class="gallery" id="photo-gallery">
+                        <!-- Photos will be displayed here -->
+                    </div>
+                    <button class="btn btn-success upload-btn" id="upload-photo-btn">Upload Photo</button>
+                    <input type="file" id="photo-input" style="display: none;" accept="image/*">
+                </div>
+                <div class="col-md-6">
+                    <h2>Videos</h2>
+                    <div class="video-gallery" id="video-gallery">
+                        <!-- Videos will be displayed here -->
+                    </div>
+                    <button class="btn btn-success upload-btn" id="upload-video-btn">Upload Video</button>
+                    <input type="file" id="video-input" style="display: none;" accept="video/*">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Company Column -->
+                <div class="col-md-3">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Medical Column -->
+                <div class="col-md-3">
+                    <h4>Medical</h4>
+                    <ul>
+                        <li><a href="#">Research Collaborations</a></li>
+                        <li><a href="#">Diagnostic Tools</a></li>
+                        <li><a href="#">Healthcare Partnerships</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Info Column -->
+                <div class="col-md-6">
+                    <h4>Contact Info</h4>
+                    <p><strong>ColonoScopy Inc.</strong><br>
+                       123 Medical Lane<br>
+                       Health City, HC 54321<br>
+                       Tel: +1 (555) 123-4567<br>
+                       Email: <a href="mailto:info@colonoscopysolution.com">info@colonoscopysolution.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> ColonoScopy Inc. All rights reserved.</p>
+        </div>
+    </footer>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // For demo purposes only - in a real application, validate credentials
+            document.getElementById('content-section').style.display = 'block';
+            document.getElementById('login-section').style.display = 'none';
+        });
+
+        document.getElementById('upload-photo-btn').addEventListener('click', function() {
+            document.getElementById('photo-input').click();
+        });
+
+        document.getElementById('photo-input').addEventListener('change', function(event) {
+            const files = event.target.files;
+            const gallery = document.getElementById('photo-gallery');
+            for (let i = 0; i < files.length; i++) {
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(files[i]);
+                img.alt = 'Uploaded Photo';
+                gallery.appendChild(img);
+            }
+        });
+
+        document.getElementById('upload-video-btn').addEventListener('click', function() {
+            document.getElementById('video-input').click();
+        });
+
+        document.getElementById('video-input').addEventListener('change', function(event) {
+            const files = event.target.files;
+            const videoGallery = document.getElementById('video-gallery');
+            for (let i = 0; i < files.length; i++) {
+                const video = document.createElement('video');
+                video.src = URL.createObjectURL(files[i]);
+                video.controls = true;
+                video.alt = 'Uploaded Video';
+                videoGallery.appendChild(video);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
