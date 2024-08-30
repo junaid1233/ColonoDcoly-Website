@@ -1,3 +1,4 @@
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -197,6 +198,36 @@ header {
   text-align: center;
   padding: 20px;
 }
+/* Form section */
+
+.contact-form {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form .form-control {
+  border-radius: 0.25rem;
+  box-shadow: none;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+
 
 /* Footer Styles */
 footer {
@@ -204,6 +235,7 @@ footer {
   background: #343a40;
   color: #fff;
 }
+
 
 footer h4 {
   font-size: 1.25rem;
