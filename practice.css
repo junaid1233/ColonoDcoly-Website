@@ -1,3 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar-brand img {
+  height: 60px; /* Adjust based on your logo size */
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+}
+
+.video-wrapper iframe,
+.video-container iframe {
+  width: 100%;
+  height: 315px; /* Adjust the height as needed */
+}
+
+.text-content {
+  padding: 60px 0; /* Adjust padding as needed */
+}
+
+.text-slider .carousel-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.image-gallery .img-thumbnail {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery .img-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+}
+
+footer h4 {
+  margin-bottom: 20px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  background-color: #e9ecef;
+}
 .video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -69,7 +143,7 @@ header {
 
 /* Carousel Styles */
 .carousel-item img {
-  height: auto  ;
+  height: 500px;
   object-fit: cover;
   width: 100%;
 }
@@ -200,7 +274,7 @@ header {
 
 /* Footer Styles */
 footer {
-  padding: 40px 0px 5px 0px;
+  padding: 40px 0;
   background: #343a40;
   color: #fff;
 }
@@ -242,16 +316,31 @@ footer p a:hover {
   text-decoration: underline;
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
+  .navbar {
+      padding: 0.5rem;
+  }
+
+  .logo-img {
+      height: 50px; /* Adjust logo size for smaller screens */
+  }
+
+  .nav-link {
+      font-size: 0.9rem;
+  }
+
   footer {
-      text-align: center;
+      padding: 20px 0;
   }
 
   footer .row {
       flex-direction: column;
+      text-align: center;
   }
 
-  footer .col-md-3 {
+  footer .col-md-3,
+  footer .col-md-6 {
       margin-bottom: 20px;
   }
 }
@@ -267,5 +356,40 @@ footer p a:hover {
 
   .nav-link {
       font-size: 0.9rem;
+  }
+
+  .text-content {
+      padding: 40px 0; /* Adjust padding for smaller screens */
+  }
+
+  .text-columns .col-md-6 {
+      margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-inner img {
+      height: 200px; /* Adjust carousel height for very small screens */
+  }
+
+  .video-wrapper iframe,
+  .video-container iframe {
+      height: 200px; /* Adjust video height for smaller screens */
+  }
+
+  .text-content h1 {
+      font-size: 1.5rem; /* Adjust heading font size for smaller screens */
+  }
+
+  .text-content p {
+      font-size: 0.9rem; /* Adjust paragraph font size */
+  }
+
+  .text-slider .carousel-item p {
+      font-size: 1rem; /* Adjust text size in slider */
+  }
+
+  .image-gallery .img-thumbnail {
+      margin-bottom: 15px; /* Adjust margin for smaller screens */
   }
 }

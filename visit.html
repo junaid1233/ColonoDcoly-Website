@@ -26,6 +26,10 @@
             <a class="navbar-brand" href="#">
                 <img src="./images/colonoLogo.png" alt="Logo" class="logo-img">ColonoScopy
             </a>
+             <!-- Navbar toggle button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -37,7 +41,7 @@
         </nav>
     </header>
     
-    <main class="container mt-5 pt-5">
+    <main class="container mt-5 p-5">
         <section id="login-section">
             <h2>Login to Access Upload Features</h2>
             <form id="login-form">
@@ -50,6 +54,7 @@
                     <input type="password" class="form-control" id="password" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
+                <p id="login-error" class="text-danger mt-2" style="display: none;">Invalid credentials. Please try again.</p>
             </form>
         </section>
         
@@ -122,9 +127,17 @@
 
         document.getElementById('login-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            // For demo purposes only - in a real application, validate credentials
-            document.getElementById('content-section').style.display = 'block';
-            document.getElementById('login-section').style.display = 'none';
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Check credentials
+            if (username === 'Saad' && password === 'Saad@ICCBS_321') {
+                document.getElementById('content-section').style.display = 'block';
+                document.getElementById('login-section').style.display = 'none';
+                document.getElementById('login-error').style.display = 'none';
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
         });
 
         document.getElementById('upload-photo-btn').addEventListener('click', function() {
@@ -160,5 +173,3 @@
     </script>
 </body>
 </html>
-
-
