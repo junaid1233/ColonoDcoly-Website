@@ -7,29 +7,40 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .upload-btn {
-            margin-top: 20px;
+/* *,*::before,
+*::after {
+    box-sizing: content-box !important; 
+}     */
+  .upload-btn {
+            margin-top: 200px;
         }
-        .gallery, .v5ideo-gallery {
+        /* #upload-video-btn{
+            margin-top: 300px;
+
+        } */
+        /* .gallery, .video-gallery {
             margin-top: 30px;
-        }
-        .gallery img, .video-gallery video {
+        
+            
+        } */
+        /* .gallery img, .video-gallery video {
             width: 100%;
-            height: auto;
             margin-bottom: 15px;
-        }
-        footer {
-    background-color: #333; 
-    color: #fff;
+            height: 100px;
+            background-color: aqua;
+        } */
 
+.footer{
+  background-color: blanchedalmond;
 }
-
 .footer-bottom {
     padding-top: 70px;
     height: 104px;
 
 }
-        
+/* *, ::after, ::before {
+    box-sizing: none;
+} */
 
     </style>
 </head>
@@ -143,8 +154,8 @@
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
-            // Check credentials
-            if (username === 'Saad' && password === 'Saad@ICCBS_321') {
+            // Check credentials Saad@ICCBS_321
+            if (username === 's' && password === 's') {
                 document.getElementById('content-section').style.display = 'block';
                 document.getElementById('login-section').style.display = 'none';
                 document.getElementById('login-error').style.display = 'none';
